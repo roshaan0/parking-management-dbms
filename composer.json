@@ -1,0 +1,19 @@
+{
+    "name": "mehar/bu-cpms",
+    "description": "bu car parking management system",
+    "autoload": {
+        "psr-4": {
+            "Mehar\\BuCpms\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mehar"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "monolog/monolog": "^3.9",
+        "dompdf/dompdf": "^3.1"
+    }
+}
