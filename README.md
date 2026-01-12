@@ -1,176 +1,148 @@
-\# University Parking Management System
+# University Parking Management System
 
+## Project Description
 
+The University Parking Management System is a web-based application designed to automate and streamline parking operations within a university campus. The system provides a structured, role-based environment that supports Administrators, Students, Faculty members, and Security personnel, ensuring efficient parking slot allocation and vehicle monitoring.
 
-\## Project Description
+By digitizing vehicle registration, slot reservation, and authorization checks, the system reduces congestion, improves security, and enhances overall campus parking management.
 
+---
 
+## Features
 
-This project is a web-based Campus Parking Management System designed to automate and streamline the process of parking slot reservation and vehicle management within a university environment. It features a role-based architecture that provides specific functionalities for Administrators, Faculty, Students, and Security personnel.
+* **Multi-Role Authentication**
+  Secure login and registration with separate dashboards for Admin, Student, Faculty, and Security roles.
 
+* **Admin Dashboard**
+  Manage users, oversee system operations, and monitor parking usage.
 
+* **Student and Faculty Portals**
+  Register vehicles, view real-time parking slot availability, and request parking reservations.
 
-The system addresses common campus parking issues by allowing users to register vehicles, check slot availability in real-time, and reserve parking spaces, while giving security staff the tools to monitor authorized vehicles.
+* **Security Interface**
+  Verify authorized vehicles and monitor parking activity across the campus.
 
+* **Slot Management System**
+  Automated tracking of available, reserved, and occupied parking slots.
 
+* **Reporting and Logs**
+  Generation of parking records and system activity logs for administrative review.
 
-\## Features
+---
 
+## Technology Stack
 
+* **Backend:** PHP
+* **Database:** MySQL
+* **Dependency Management:** Composer
+* **Server Environment:** Apache (XAMPP/WAMP/MAMP)
 
-\* \*\*Multi-Role Authentication:\*\* Secure login and registration system with separate dashboards for different user types.
+---
 
-\* \*\*Admin Dashboard:\*\* Manage users, oversee system settings, and generate usage reports.
+## Prerequisites
 
-\* \*\*Student \& Faculty Portals:\*\* Capabilities to register vehicles, view available parking slots, and request reservations.
+Before running this project, ensure the following are installed:
 
-\* \*\*Security Interface:\*\* Tools for security personnel to verify vehicle authorizations and manage real-time parking flow.
+* A local server environment such as **XAMPP**, **WAMP**, or **MAMP** (Apache and MySQL)
+* **Composer** for PHP dependency management
+* A modern web browser (Chrome, Edge, or Firefox)
 
-\* \*\*Slot Management:\*\* Automated tracking of reserved versus available parking spaces.
+---
 
-\* \*\*Reporting:\*\* Generation of parking statistics and logs.
+## Installation and Setup
 
+### 1. Clone the Repository
 
+Clone the project into your local server root directory.
 
-\## Technology Stack
-
-
-
-\* \*\*Backend:\*\* PHP
-
-\* \*\*Database:\*\* MySQL
-
-\* \*\*Dependency Management:\*\* Composer
-
-
-
-\## Prerequisites
-
-
-
-Before running this project, ensure you have the following installed:
-
-
-
-\* \*\*XAMPP/WAMP/MAMP:\*\* A local server environment containing Apache and MySQL.
-
-\* \*\*Composer:\*\* A dependency manager for PHP.
-
-\* \*\*Web Browser:\*\* Chrome, Edge, or Firefox for testing.
-
-
-
-\## Installation and Setup
-
-
-
-\### 1. Clone the Repository
-
-
-
-Clone the project to your local machine inside your server's root directory (e.g., `C:\\xampp\\htdocs\\` for XAMPP).
-
-
+Example for XAMPP:
 
 ```bash
-
-git clone https://github.com/YOUR\_USERNAME/YOUR\_REPO\_NAME.git
-
-
-
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 ```
 
+Place the project inside:
 
+```
+C:/xampp/htdocs/
+```
 
-\### 2. Install Dependencies
+---
 
+### 2. Install Dependencies
 
-
-This project uses Composer to manage dependencies. Open a terminal in the project root directory and run:
-
-
+Navigate to the project root directory and run:
 
 ```bash
-
 composer install
-
-
-
 ```
 
+This command will generate the `vendor` directory required for the application to function.
 
+---
 
-This will generate the `vendor` folder required for the application to run.
+### 3. Database Setup
 
+1. Open your database management tool (e.g., phpMyAdmin).
+2. Create a new database named:
 
+```
+bu_cpms
+```
 
-\### 3. Database Configuration
+3. Import the SQL file:
 
+```
+bu_cpms.sql
+```
 
+into the newly created database.
 
-1\. Open your database management tool (e.g., phpMyAdmin).
+---
 
-2\. Create a new database named \*\*`bu\_cpms`\*\*.
+### 4. Database Configuration
 
-3\. Import the provided SQL file located at \*\*`bu\_cpms.sql`\*\* into the newly created database.
+Database connection settings are located in `db.php`.
 
+Default configuration for XAMPP:
 
+* Server: `localhost`
+* Username: `root`
+* Password: *(empty)*
+* Database: `bu_cpms`
 
-\### 4. Database Connection
+If your environment uses a different configuration, update `db.php` accordingly.
 
+---
 
+## Usage
 
-The database connection settings are located in `db.php`. By default, they are configured for a standard XAMPP environment:
+1. Start **Apache** and **MySQL** from your server control panel.
+2. Open your web browser and navigate to:
 
+```
+http://localhost/bu_parking/
+```
 
+3. Log in using existing credentials from the database or register a new account to access the appropriate dashboard.
 
-\* \*\*Server:\*\* localhost
+---
 
-\* \*\*Username:\*\* root
+## Project Structure
 
-\* \*\*Password:\*\* (empty)
+```
+University-Parking-Management-System/
+│
+├── src/            # Core application logic and classes
+├── vendor/         # Composer-managed dependencies
+├── *.php           # Role-based dashboards and backend logic
+├── bu_cpms.sql     # Database schema and sample data
+├── db.php          # Database connection configuration
+└── README.md
+```
 
-\* \*\*Database:\*\* bu\_cpms
+---
 
+## License
 
-
-If your local environment uses a password, please update `db.php` accordingly.
-
-
-
-\## Usage
-
-
-
-1\. Start the \*\*Apache\*\* and \*\*MySQL\*\* modules in your control panel (XAMPP).
-
-2\. Open your web browser and navigate to:
-
-`http://localhost/bu\_parking/`
-
-3\. Log in using the credentials stored in the database or register a new account to access the respective dashboard.
-
-
-
-\## Project Structure
-
-
-
-\* `src/`: Contains core application logic and classes.
-
-\* `vendor/`: Third-party libraries managed by Composer.
-
-\* `\*.php`: Frontend and backend logic files for various dashboards (Admin, Student, Faculty, Security).
-
-\* `bu\_cpms.sql`: Database import file.
-
-\* `db.php`: Database connection configuration.
-
-
-
-\## License
-
-
-
-This project is open-source and available for educational purposes.
-
+This project is open-source and intended for educational and academic use, particularly for demonstrating web development concepts and database-driven system design.
